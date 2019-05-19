@@ -12,6 +12,7 @@ public class mSale {
     }
 
     public static Users user;
+    public int a = 10;
     public static LinkedList <Users> users = new LinkedList<>();
     public static LinkedList<History> history = new LinkedList<>();
     public static LinkedList <Product> products = new LinkedList<>();
