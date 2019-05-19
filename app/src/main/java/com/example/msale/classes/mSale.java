@@ -17,6 +17,7 @@ public class mSale {
     public static LinkedList <Product> products = new LinkedList<>();
     public static LinkedList<Product> Cart = new LinkedList<>();
     public static LinkedList<Product> productsForShow = new LinkedList<>();
+    public static int a;
 
     public static Users mkUser(String string) {
         String[] strings = string.split(" ");
