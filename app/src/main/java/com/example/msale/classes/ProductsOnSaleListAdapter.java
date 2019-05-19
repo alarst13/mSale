@@ -1,5 +1,6 @@
 package com.example.msale.classes;
 
+import android.graphics.Paint;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -42,7 +43,7 @@ public class ProductsOnSaleListAdapter extends RecyclerView.Adapter<ProductsOnSa
     class ProductViewHolder extends RecyclerView.ViewHolder {
 
         private ImageView imageView;
-        private TextView txt_price,txt_description;
+        private TextView txt_price,txt_description,txt_off_price;
 
         public ProductViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -50,10 +51,18 @@ public class ProductsOnSaleListAdapter extends RecyclerView.Adapter<ProductsOnSa
             imageView = itemView.findViewById(R.id.products_on_sale_layout_image_view);
             txt_description = itemView.findViewById(R.id.description_txt_products_on_sale);
             txt_price = itemView.findViewById(R.id.price_txt_products_on_sale);
+            txt_off_price = itemView.findViewById(R.id.off_price_txt_products_on_sale);
         }
 
         public void bindView(Product product) {
             txt_description.setText(product.getName());
+            if (product.isHaveOff()){
+                txt_price.setText(String.valueOf(product.getPrice()));
+                txt_off_price.setText(String.valueOf(product.getFinalPrice()));
+                txt_price.setPaintFlags(txt_price.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+            }else{
+                txt_off_price.setText(String.valueOf(product.getFinalPrice()));
+            }
         }
     }
 }
