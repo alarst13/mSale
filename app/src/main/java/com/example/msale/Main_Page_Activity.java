@@ -31,6 +31,7 @@ public class Main_Page_Activity extends AppCompatActivity implements NavigationV
 
     Boolean bool = false;
     UsersDatabase database = new UsersDatabase(this);
+    Users user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +50,7 @@ public class Main_Page_Activity extends AppCompatActivity implements NavigationV
         FloatingActionButton fab = findViewById(R.id.fab);
 
         try{
-            Users user = (Users) getIntent().getSerializableExtra("user");
+            user = (Users) getIntent().getSerializableExtra("user");
             bool = user.isBool();
         }
         catch (Exception e){}
@@ -66,6 +67,13 @@ public class Main_Page_Activity extends AppCompatActivity implements NavigationV
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+
+        if(bool == true){
+            navigationView = findViewById(R.id.nav_view);
+            Menu menu = navigationView.getMenu();
+            MenuItem nav_account = menu.findItem(R.id.nav_account);
+            nav_account.setTitle(user.getUsername());
+        }
     }
 
     @Override
@@ -107,7 +115,13 @@ public class Main_Page_Activity extends AppCompatActivity implements NavigationV
         int id = item.getItemId();
 
         if (id == R.id.nav_sign_out) {
-            // Handle the camera action
+            if(bool == true){
+                database.editBool(String.valueOf(false), user.getId());
+                mSale.getFromDatabase(this);
+                Intent intent = new Intent(this, Main_Page_Activity.class);
+                startActivity(intent);
+                finish();
+            }
         } else if (id == R.id.nav_account) {
             if(bool == false) {
                 try {

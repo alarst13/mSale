@@ -94,7 +94,10 @@ public class SignUp extends AppCompatActivity {
                                     password_edt.setText("");
                                     confirm_edt.setText("");
                                     finishActivity(888);
-                                    startActivityForResult(intent,8);
+                                    intent.addCategory(Intent.CATEGORY_HOME);
+                                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                    startActivity(intent);
+                                    finish();
                                 }
                             }
                             else {
