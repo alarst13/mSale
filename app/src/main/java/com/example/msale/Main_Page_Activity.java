@@ -46,6 +46,14 @@ public class Main_Page_Activity extends AppCompatActivity implements NavigationV
         FloatingActionButton fab = findViewById(R.id.fab);
         recyclerView = findViewById(R.id.content_user_recycler_view);
 
+        try {
+            if (!mSale.checkingUsername("M8")) {
+                if (!mSale.checkPhoneNumber("09115823029")) {
+                    database.insertData("M8", "09115823029", "1999", "0", "false");
+                }
+            }
+        } catch (Exception e){}
+
         try{
             user = (Users) getIntent().getSerializableExtra("user");
             bool = user.isBool();
