@@ -42,17 +42,18 @@ public class ProductsOnSaleListAdapter extends RecyclerView.Adapter<ProductsOnSa
     class ProductViewHolder extends RecyclerView.ViewHolder {
 
         private ImageView imageView;
-        private TextView textView;
+        private TextView txt_price,txt_description;
 
         public ProductViewHolder(@NonNull View itemView) {
             super(itemView);
 
             imageView = itemView.findViewById(R.id.products_on_sale_layout_image_view);
-            textView = itemView.findViewById(R.id.tv);
+            txt_description = itemView.findViewById(R.id.description_txt_products_on_sale);
+            txt_price = itemView.findViewById(R.id.price_txt_products_on_sale);
         }
 
         public void bindView(Product product) {
-            textView.setText(product.getName());
+            txt_description.setText(product.getName());
         }
     }
 }
