@@ -59,6 +59,7 @@ public class Main_Page_Activity extends AppCompatActivity implements NavigationV
         recyclerView.setAdapter(productsOnSaleListAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
+
         try {
             user = (User) getIntent().getSerializableExtra("user");
             bool = user.isBool();
