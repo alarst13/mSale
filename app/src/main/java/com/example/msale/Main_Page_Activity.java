@@ -4,34 +4,30 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.view.View;
-import android.support.v4.view.GravityCompat;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.view.MenuItem;
 import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 
 import com.example.msale.activities.SignInPage;
-import com.example.msale.classes.Message;
 import com.example.msale.classes.Users.Users;
 import com.example.msale.classes.UsersDatabase;
 import com.example.msale.classes.mSale;
-
-import java.io.Serializable;
-import java.security.cert.Extension;
 
 public class Main_Page_Activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     Boolean bool = false;
     UsersDatabase database = new UsersDatabase(this);
     Users user;
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +44,7 @@ public class Main_Page_Activity extends AppCompatActivity implements NavigationV
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
+        recyclerView = findViewById(R.id.content_user_recycler_view);
 
         try{
             user = (Users) getIntent().getSerializableExtra("user");
