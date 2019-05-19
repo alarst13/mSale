@@ -9,6 +9,8 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -18,6 +20,9 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.example.msale.activities.SignInPage;
+import com.example.msale.classes.Products.Books.Book;
+import com.example.msale.classes.Products.Electronics.Electronic;
+import com.example.msale.classes.ProductsOnSaleListAdapter;
 import com.example.msale.classes.Users.User;
 import com.example.msale.classes.UsersDatabase;
 import com.example.msale.classes.mSale;
@@ -46,11 +51,20 @@ public class Main_Page_Activity extends AppCompatActivity implements NavigationV
         FloatingActionButton fab = findViewById(R.id.fab);
         recyclerView = findViewById(R.id.content_user_recycler_view);
 
-        try{
+        mSale.products.addLast(new Book("a", "b", 100, 0.9, "a", 10));
+        mSale.products.addLast(new Electronic("v", "s", 1000, 0.6, "f", 16));
+        mSale.mkAllList();
+
+        ProductsOnSaleListAdapter productsOnSaleListAdapter = new ProductsOnSaleListAdapter(mSale.productsForShow);
+        recyclerView.setAdapter(productsOnSaleListAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+
+        try {
             user = (User) getIntent().getSerializableExtra("user");
             bool = user.isBool();
+        } catch (Exception e) {
         }
-        catch (Exception e){}
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,7 +79,7 @@ public class Main_Page_Activity extends AppCompatActivity implements NavigationV
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
 
-        if(bool == true){
+        if (bool == true) {
             navigationView = findViewById(R.id.nav_view);
             Menu menu = navigationView.getMenu();
             MenuItem nav_account = menu.findItem(R.id.nav_account);
@@ -112,7 +126,7 @@ public class Main_Page_Activity extends AppCompatActivity implements NavigationV
         int id = item.getItemId();
 
         if (id == R.id.nav_sign_out) {
-            if(bool == true){
+            if (bool == true) {
                 database.editBool(String.valueOf(false), user.getId());
                 mSale.getFromDatabase(this);
                 Intent intent = new Intent(this, Main_Page_Activity.class);
@@ -120,14 +134,14 @@ public class Main_Page_Activity extends AppCompatActivity implements NavigationV
                 finish();
             }
         } else if (id == R.id.nav_account) {
-            if(bool == false) {
+            if (bool == false) {
                 try {
                     mSale.getFromDatabase(getApplicationContext());
-                } catch (Exception e) {}
+                } catch (Exception e) {
+                }
                 Intent intent = new Intent(Main_Page_Activity.this, SignInPage.class);
-                startActivityForResult(intent,888);
-            }
-            else{
+                startActivityForResult(intent, 888);
+            } else {
             }
         } else if (id == R.id.nav_categories) {
 
