@@ -7,6 +7,7 @@ import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -15,8 +16,12 @@ import android.view.WindowManager;
 
 import com.example.msale.Main_Page_Activity;
 import com.example.msale.R;
+import com.example.msale.classes.ProductsOnSaleListAdapter;
+import com.example.msale.classes.mSale;
 
 public class AdminActivity extends AppCompatActivity {
+
+    RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +36,12 @@ public class AdminActivity extends AppCompatActivity {
         }
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FF4500")));
         getSupportActionBar().setTitle("M8");
+
+        recyclerView = findViewById(R.id.admin_recycler_view);
+        mSale.mkAllList();
+        ProductsOnSaleListAdapter productsOnSaleListAdapter = new ProductsOnSaleListAdapter(mSale.productsForShow);
+        recyclerView.setAdapter(productsOnSaleListAdapter);
+
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {

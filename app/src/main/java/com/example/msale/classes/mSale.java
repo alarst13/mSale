@@ -68,6 +68,13 @@ public class mSale {
         }
     }
 
+    public static void mkAllList(){
+        productsForShow.clear();
+        for (Product p : products) {
+            productsForShow.addLast(p);
+        }
+    }
+
     public static User getUser() {
         return user;
     }

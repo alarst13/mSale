@@ -47,9 +47,7 @@ public class SignInPage extends AppCompatActivity {
 
         username_edt = findViewById(R.id.sign_in_username_edt);
         password_edt = findViewById(R.id.sign_in_password_edt);
-
         submit = findViewById(R.id.sign_in_btn);
-
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
