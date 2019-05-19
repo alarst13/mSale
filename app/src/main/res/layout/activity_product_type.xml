@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.ProductTypeActivity">
+
+    <Button
+        android:id="@+id/product_type_product"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:onClick="clickModelButton"
+        android:tag="product"
+        android:text="product"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/product_type_book"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:onClick="clickModelButton"
+        android:tag="book"
+        android:text="book"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/product_type_adventure"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:onClick="clickModelButton"
+        android:tag="adventure"
+        android:text="adventure"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/product_type_love_affair"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:onClick="clickModelButton"
+        android:tag="love affair"
+        android:text="love affair"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/product_type_Science_fiction"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:onClick="clickModelButton"
+        android:tag="Science fiction"
+        android:text="Science fiction"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/product_type_car"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:onClick="clickModelButton"
+        android:tag="car"
+        android:text="car"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/product_type_limousine"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:onClick="clickModelButton"
+        android:tag="limousine"
+        android:text="limousine"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/product_type_sedan"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:onClick="clickModelButton"
+        android:tag="sedan"
+        android:text="sedan"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/product_type_electronic"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:onClick="clickModelButton"
+        android:tag="electronic"
+        android:text="electronic"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/product_type_cellphone"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:onClick="clickModelButton"
+        android:tag="cellphone"
+        android:text="cellphone"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/product_type_laptop"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:onClick="clickModelButton"
+        android:tag="laptop"
+        android:text="laptop"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/product_type_tablet"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:onClick="clickModelButton"
+        android:tag="tablet"
+        android:text="tablet"
+        tools:ignore="MissingConstraints" />
+
+</LinearLayout>

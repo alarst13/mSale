@@ -19,6 +19,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.example.msale.activities.ProductTypeActivity;
 import com.example.msale.activities.SignInPage;
 import com.example.msale.classes.Products.Books.Book;
 import com.example.msale.classes.Products.Electronics.Electronic;
@@ -144,7 +145,8 @@ public class Main_Page_Activity extends AppCompatActivity implements NavigationV
             } else {
             }
         } else if (id == R.id.nav_categories) {
-
+            startActivity(new Intent( this, ProductTypeActivity.class));
+            recyclerView.getAdapter().notifyDataSetChanged();
         } else if (id == R.id.nav_cart) {
 
         } else if (id == R.id.nav_history) {
