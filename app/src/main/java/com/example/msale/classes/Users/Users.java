@@ -3,20 +3,31 @@ package com.example.msale.classes.Users;
 import java.io.Serializable;
 
 public class Users implements Serializable {
+    private String id;
     private String username;
     private String phoneNumber;
     private String password;
     private long cash;
     private boolean bool;
+
     public Users() {
     }
 
-    public Users(String username, String phoneNumber, String password, long cash, boolean bool) {
+    public Users(String id, String username, String phoneNumber, String password, long cash, boolean bool) {
+        this.id = id;
         this.username = username;
         this.phoneNumber = phoneNumber;
         this.password = password;
         this.cash = cash;
         this.bool = bool;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public boolean isBool() {

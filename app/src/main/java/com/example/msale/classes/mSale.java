@@ -20,10 +20,11 @@ public class mSale {
 
     public static Users mkUser(String string) {
         String[] strings = string.split(" ");
-        return new Users(strings[1], strings[2], strings[3], Long.parseLong(strings[4]), Boolean.parseBoolean(strings[5]));
+        return new Users(strings[0], strings[1], strings[2], strings[3], Long.parseLong(strings[4]), Boolean.parseBoolean(strings[5]));
     }
 
     public static void getFromDatabase(Context context) {
+        users.clear();
         UsersDatabase dbAdapter = new UsersDatabase(context);
         String string = dbAdapter.getData();
         String[] strings = string.split("\n");

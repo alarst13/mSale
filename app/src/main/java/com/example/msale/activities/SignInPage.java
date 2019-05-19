@@ -61,12 +61,13 @@ public class SignInPage extends AppCompatActivity {
                         Users users = mSale.getUsers(username);
                         if (users.getPassword().equals(password)) {
                             Intent intent = new Intent(getBaseContext(), Main_Page_Activity.class);
-                            Message.message(getApplicationContext(), String.valueOf(database.editBool(username,String.valueOf(true))));
+                            bool = true;
+                            database.editBool(String.valueOf(bool), mSale.getUsers(username).getId());
                             intent.putExtra("user", mSale.getUsers(username));
                             username_edt.setText("");
                             password_edt.setText("");
                             finishActivity(888);
-                            startActivity(intent);
+                            startActivityForResult(intent, 88);
                         }
                         else {
                             password_edt.setText("");

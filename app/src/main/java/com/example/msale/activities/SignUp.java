@@ -81,14 +81,20 @@ public class SignUp extends AppCompatActivity {
                                 else {
                                     Intent intent = new Intent(getBaseContext(), Main_Page_Activity.class);
                                     bool = true;
-                                    helper.editBool(username,String.valueOf(bool));
+                                    try {
+                                        mSale.getFromDatabase(getApplicationContext());
+                                    } catch (Exception e) {}
+                                    helper.editBool(String.valueOf(bool), mSale.getUsers(username).getId());
+                                    try {
+                                        mSale.getFromDatabase(getApplicationContext());
+                                    } catch (Exception e) {}
                                     intent.putExtra("user", mSale.getUsers(username));
                                     username_edt.setText("");
                                     phoneNumber_edt.setText("");
                                     password_edt.setText("");
                                     confirm_edt.setText("");
                                     finishActivity(888);
-                                    startActivity(intent);
+                                    startActivityForResult(intent,8);
                                 }
                             }
                             else {

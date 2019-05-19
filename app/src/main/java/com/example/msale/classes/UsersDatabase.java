@@ -14,13 +14,14 @@ public class UsersDatabase {
         myhelper = new myDbHelper(context);
     }
 
-    public int editBool(String username , String newBool)
+    public int editBool(String newBool , String id)
     {
         SQLiteDatabase db = myhelper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(myDbHelper.BOOL, newBool);
-        int count =db.update(myDbHelper.TABLE_NAME,contentValues, myDbHelper.BOOL+" = ?", new String[] {username});
+        int count =db.update(myDbHelper.TABLE_NAME, contentValues, myDbHelper.UID+" = ?", new String[] { id });
         return count;
+
     }
 
     public String getData() {

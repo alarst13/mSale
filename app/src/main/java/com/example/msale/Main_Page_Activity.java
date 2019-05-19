@@ -48,22 +48,11 @@ public class Main_Page_Activity extends AppCompatActivity implements NavigationV
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
 
-        try {
-            mSale.getFromDatabase(this);
-        } catch (Exception e) {
-        }
-
         try{
             Users user = (Users) getIntent().getSerializableExtra("user");
             bool = user.isBool();
-            Message.message(getApplicationContext(), user.getPassword());
         }
         catch (Exception e){}
-
-        if(bool == true){
-            NavigationView navigationView = findViewById(R.id.nav_view);
-            navigationView.getMenu().getItem(1).setTitle(mSale.getUser().getUsername());
-        }
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -120,12 +109,14 @@ public class Main_Page_Activity extends AppCompatActivity implements NavigationV
         if (id == R.id.nav_sign_out) {
             // Handle the camera action
         } else if (id == R.id.nav_account) {
-            if(bool == false) { ;
+            if(bool == false) {
+                try {
+                    mSale.getFromDatabase(getApplicationContext());
+                } catch (Exception e) {}
                 Intent intent = new Intent(Main_Page_Activity.this, SignInPage.class);
                 startActivityForResult(intent,888);
             }
             else{
-
             }
         } else if (id == R.id.nav_categories) {
 
