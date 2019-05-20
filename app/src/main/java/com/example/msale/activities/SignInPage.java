@@ -50,6 +50,7 @@ public class SignInPage extends AppCompatActivity {
 
         submit = findViewById(R.id.sign_in_btn);
 
+
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
