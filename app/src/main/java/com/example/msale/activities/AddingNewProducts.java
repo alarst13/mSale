@@ -1,10 +1,14 @@
 package com.example.msale.activities;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,10 +19,15 @@ import android.widget.ImageView;
 
 import com.example.msale.R;
 
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+
 public class AddingNewProducts extends AppCompatActivity {
 
+    private static final int RESULT_LOAD_IMG = 1;
     private ImageView imageView;
     private Button button;
+    private String picID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +37,7 @@ public class AddingNewProducts extends AppCompatActivity {
         setContentView(R.layout.activity_adding_new_products);
 
         imageView = findViewById(R.id.adding_image_view_products);
-        button.findViewById(R.id.adding_new_products_btn);
+        button = findViewById(R.id.adding_new_products_btn);
 
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,6 +45,7 @@ public class AddingNewProducts extends AppCompatActivity {
 
                 Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
                 photoPickerIntent.setType("image/*");
+                startActivityForResult(photoPickerIntent, RESULT_LOAD_IMG);
             }
         });
 
@@ -54,6 +64,29 @@ public class AddingNewProducts extends AppCompatActivity {
         }
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FF4500")));
         getSupportActionBar().setTitle("M8");
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (resultCode == RESULT_OK) {
+
+            try {
+                final Uri imageUri = data.getData();
+                picID = imageUri.toString();
+
+                try {
+                    InputStream inputStream = getContentResolver().openInputStream(Uri.parse(picID));
+                    Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+                    imageView.setImageBitmap(bitmap);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @Override
