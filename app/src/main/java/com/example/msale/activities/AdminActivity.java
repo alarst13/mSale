@@ -29,10 +29,8 @@ public class AdminActivity extends AppCompatActivity {
             window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             window.setStatusBarColor(this.getResources().getColor(R.color.red));
         }
-
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FF4500")));
         getSupportActionBar().setTitle("M8");
-
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
