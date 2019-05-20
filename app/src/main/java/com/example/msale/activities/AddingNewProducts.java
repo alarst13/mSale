@@ -43,7 +43,6 @@ public class AddingNewProducts extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adding_new_products);
 
-
         spinner = findViewById(R.id.adding_new_product_type_spinner);
         button = findViewById(R.id.adding_new_products_btn);
         productNameEditText = findViewById(R.id.adding_product_product_name);
