@@ -23,6 +23,7 @@ import com.example.msale.R;
 import com.example.msale.classes.Message;
 import com.example.msale.classes.Products.Product;
 import com.example.msale.classes.ProductsDatabase;
+import com.example.msale.classes.mSale;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -75,6 +76,7 @@ public class AddingNewProducts extends AppCompatActivity {
                                 toString().trim()));
                 product.setType(spinner.getSelectedItem().toString());
                 product.setPicID(picID);
+                mSale.products.addLast(product);
                 productsDatabase.insertData(product.getType(), product.getName(), product.getFactory(), String.valueOf(product.getPrice()), String.valueOf(product.getOff()), product.getExplanation(), String.valueOf(product.getNumber()), product.getPicID());
                 Message.message(getApplicationContext(), String.valueOf(productsDatabase.getData()));
             }

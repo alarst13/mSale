@@ -5,18 +5,22 @@ import android.content.Context;
 import com.example.msale.classes.Products.Product;
 import com.example.msale.classes.Users.User;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 public class mSale {
     private mSale() {
     }
 
     public static User user;
-    public static LinkedList <User> users = new LinkedList<>();
+    public static LinkedList<User> users = new LinkedList<>();
     public static LinkedList<History> history = new LinkedList<>();
-    public static LinkedList <Product> products = new LinkedList<>();
+    public static LinkedList<Product> products = new LinkedList<>();
     public static LinkedList<Product> Cart = new LinkedList<>();
     public static LinkedList<Product> productsForShow = new LinkedList<>();
+    private static boolean isFirstCallToDatabase;
+
 
     public static User mkUser(String string) {
         String[] strings = string.split(" ");
@@ -33,42 +37,62 @@ public class mSale {
         }
     }
 
-    public static boolean checkingUsername (String username){
+    public static boolean checkingUsername(String username) {
         for (User user : users) {
-            if (user.getUsername().equals(username)){
+            if (user.getUsername().equals(username)) {
                 return true;
             }
         }
         return false;
     }
 
-    public static boolean checkPhoneNumber(String phoneNumber){
+    public static boolean checkPhoneNumber(String phoneNumber) {
         for (User user : users) {
-            if (user.getPhoneNumber().equals(phoneNumber)){
+            if (user.getPhoneNumber().equals(phoneNumber)) {
                 return true;
             }
         }
         return false;
     }
 
-    public static User getUsers(String username){
+    public static User getUsers(String username) {
         for (User user : users) {
-            if (user.getUsername().equals(username)){
+            if (user.getUsername().equals(username)) {
                 return user;
             }
         }
         return null;
     }
-    public static void mkShowListWithOff(){
+
+    public static void getAllProductsFromDatabase(Context context) {
+        if (isFirstCallToDatabase)
+            return;
+
+        ProductsDatabase productsDatabase = new ProductsDatabase(context);
+        String s = productsDatabase.getData();
+
+        if (!s.equals("")) {
+            String[] productStrings = s.split("\n");
+
+            for (String s1 : productStrings) {
+                String[] fieldsStrings = s1.split(" ");
+                Product product = new Product(fieldsStrings[1], fieldsStrings[2], Long.valueOf(fieldsStrings[3]), Double.valueOf(fieldsStrings[4]), fieldsStrings[5], Integer.valueOf(fieldsStrings[6]));
+                products.add(product);
+            }
+        }
+        isFirstCallToDatabase = true;
+    }
+
+    public static void mkShowListWithOff() {
         productsForShow.clear();
         for (Product p : products) {
-            if(p.isHaveOff()){
+            if (p.isHaveOff()) {
                 productsForShow.addLast(p);
             }
         }
     }
 
-    public static void mkAllList(){
+    public static void mkAllList() {
         productsForShow.clear();
         for (Product p : products) {
             productsForShow.addLast(p);
@@ -83,19 +107,19 @@ public class mSale {
         mSale.user = user;
     }
 
-    public static boolean buy( User user){
+    public static boolean buy(User user) {
         long sum = 0;
         for (Product p : mSale.Cart) {
             sum = sum + (long) (p.getNumberForBuy() * p.getFinalPrice());
-            if (p.getNumberForBuy() > p.getNumber()){
+            if (p.getNumberForBuy() > p.getNumber()) {
                 return false;
             }
         }
-        if (sum > user.getCash()){
+        if (sum > user.getCash()) {
             return false;
         }
         for (Product p : mSale.Cart) {
-            if(!p.buy(user)){
+            if (!p.buy(user)) {
                 return true;
             }
         }
