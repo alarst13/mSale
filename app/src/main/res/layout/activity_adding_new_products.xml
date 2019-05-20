@@ -1,8 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.AddingNewProducts">
-</RelativeLayout>
+    tools:context=".activities.AddingNewProducts"
+    android:background="@drawable/pink_background">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/adding_new_products_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:weightSum="8">
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2" />
+
+            <ImageView
+                android:id="@+id/adding_image_view_products"
+                android:background="@drawable/ic_attach"
+                android:clickable="true"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_weight="4" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_centerInParent="true"
+            android:layout_below="@id/adding_new_products_linear_layout"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            android:id="@+id/adding_new_products_second_linear_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:weightSum="7">
+            <TextView
+                android:paddingRight="75dp"
+                android:layout_centerInParent="true"
+                android:id="@+id/adding_new_products_txt"
+                android:layout_marginTop="5dp"
+                android:layout_below="@id/adding_new_products_linear_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fill all of the following fields:"
+                android:textColor="#ff3a3a"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:fontFamily="cursive"/>
+            <EditText
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Product name"
+                android:textSize="15sp"
+                />
+            <EditText
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Factory"
+                android:textSize="15sp"
+                />
+            <EditText
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Price"
+                android:textSize="15sp"
+                />
+            <EditText
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Off Price"
+                android:textSize="15sp"
+                />
+            <EditText
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Description"
+                android:textSize="15sp"
+                />
+            <EditText
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Number"
+                android:textSize="15sp"
+                />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/adding_new_products_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/adding_new_products_second_linear_layout"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/sign_in_btn"
+            android:text="Confirm"
+            android:textColor="#ffff"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+</ScrollView>
