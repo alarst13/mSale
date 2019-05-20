@@ -1,6 +1,7 @@
 package com.example.msale.classes.Products;
 
 import com.example.msale.classes.History;
+import com.example.msale.classes.Users.User;
 import com.example.msale.classes.mSale;
 
 public class Product {
@@ -106,12 +107,12 @@ public class Product {
         return (long) (this.price * this.off);
     }
 
-    public boolean buy() {
-        if (mSale.user.getCash() < this.getFinalPrice() * this.numberForBuy || this.numberForBuy > this.number) {
+    public boolean buy(User user) {
+        if (user.getCash() < this.getFinalPrice() * this.numberForBuy || this.numberForBuy > this.number) {
             return false;
         }
         this.number = this.number - this.numberForBuy;
-        mSale.user.setCash(mSale.user.getCash() - (this.numberForBuy * this.getFinalPrice()));
+        user.setCash(user.getCash() - (this.numberForBuy * this.getFinalPrice()));
         //add date
         mSale.history.addLast(new History(mSale.user.getUsername() + " " + this.numberForBuy, this.name, this.getFinalPrice(), null, this.getClass().toString()));
         this.numberForBuy = 0;

@@ -52,6 +52,7 @@ public class Main_Page_Activity extends AppCompatActivity implements NavigationV
         FloatingActionButton fab = findViewById(R.id.fab);
         recyclerView = findViewById(R.id.content_user_recycler_view);
 
+
         mSale.products.addLast(new Book("a", "b", 100, 0.9, "a", 10));
         mSale.products.addLast(new Electronic("v", "s", 1000, 0.6, "f", 16));
         mSale.mkAllList();

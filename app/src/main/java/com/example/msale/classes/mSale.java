@@ -82,4 +82,23 @@ public class mSale {
     public static void setUser(User user) {
         mSale.user = user;
     }
+
+    public static boolean buy( User user){
+        long sum = 0;
+        for (Product p : mSale.Cart) {
+            sum = sum + (long) (p.getNumberForBuy() * p.getFinalPrice());
+            if (p.getNumberForBuy() > p.getNumber()){
+                return false;
+            }
+        }
+        if (sum > user.getCash()){
+            return false;
+        }
+        for (Product p : mSale.Cart) {
+            if(!p.buy(user)){
+                return true;
+            }
+        }
+        return true;
+    }
 }
