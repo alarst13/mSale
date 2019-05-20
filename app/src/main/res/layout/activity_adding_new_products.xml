@@ -6,8 +6,4 @@
     android:layout_height="match_parent"
     tools:context=".activities.AddingNewProducts">
     
-    <ImageView
-        android:layout_width=""
-        android:layout_height="" />
-    
 </RelativeLayout>
