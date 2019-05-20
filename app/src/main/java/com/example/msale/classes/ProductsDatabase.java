@@ -31,7 +31,7 @@ public class ProductsDatabase {
         return buffer.toString();
     }
 
-    public long insertData(String name, String factory, String price, String off, String description, String number) {
+    public long insertData(String name, String factory, String price, String off, String description, String number, String picID) {
         SQLiteDatabase db = helper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(myDbHelper.NAME, name);
@@ -40,6 +40,7 @@ public class ProductsDatabase {
         contentValues.put(myDbHelper.OFF,off);
         contentValues.put(myDbHelper.DESCRIPTION,description);
         contentValues.put(myDbHelper.NUMBER,number);
+        contentValues.put(myDbHelper.PIC_ID, picID);
         long id = db.insert(myDbHelper.TABLE_NAME, null, contentValues);
         return id;
     }
@@ -56,7 +57,8 @@ public class ProductsDatabase {
         private static final String OFF = "off";
         private static final String DESCRIPTION = "description";
         private static final String NUMBER = "number";
-        private static final String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + " (" + UID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + NAME + " VARCHAR(255), " + FACTORY + " VARCHAR(255), " + PRICE + " VARCHAR(255), " + OFF + " VARCHAR(255), " + DESCRIPTION + " VARCHAR(255), " + NUMBER + " VARCHAR(255))";
+        public static final String PIC_ID = "picID";
+        private static final String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + " (" + UID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + NAME + " VARCHAR(255), " + FACTORY + " VARCHAR(255), " + PRICE + " VARCHAR(255), " + OFF + " VARCHAR(255), " + DESCRIPTION + " VARCHAR(255), " + NUMBER + " VARCHAR(255), " + PIC_ID + " VARCHAR(255))";
         private Context context;
 
         public myDbHelper(Context context) {

@@ -15,9 +15,11 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.example.msale.R;
+import com.example.msale.classes.Products.Product;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -27,6 +29,7 @@ public class AddingNewProducts extends AppCompatActivity {
     private static final int RESULT_LOAD_IMG = 1;
     private ImageView imageView;
     private Button button;
+    private EditText productNameEditText, productPriceEditText, productOffPriceEditText, descriptionEditText, numberEditText, factoryEditText;
     private String picID;
 
     @Override
@@ -38,6 +41,12 @@ public class AddingNewProducts extends AppCompatActivity {
 
         imageView = findViewById(R.id.adding_image_view_products);
         button = findViewById(R.id.adding_new_products_btn);
+        productNameEditText = findViewById(R.id.adding_product_product_name);
+        productPriceEditText = findViewById(R.id.adding_product_price);
+        productOffPriceEditText = findViewById(R.id.adding_product_off_price);
+        descriptionEditText = findViewById(R.id.adding_product_description);
+        numberEditText = findViewById(R.id.adding_product_number);
+        factoryEditText = findViewById(R.id.adding_product_factory);
 
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +61,16 @@ public class AddingNewProducts extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                Product product = new Product(productNameEditText.getText().toString().trim(),
+                        factoryEditText.getTag().toString().trim(),
+                        Long.valueOf(productPriceEditText.getTag().toString().trim()),
+                        Double.valueOf(productOffPriceEditText.getTag().toString().trim()),
+                        descriptionEditText.getTag().toString().trim(),
+                        Integer.valueOf(numberEditText.getTag().toString().trim()));
+
+                product.setPicID(picID);
+
 
             }
         });

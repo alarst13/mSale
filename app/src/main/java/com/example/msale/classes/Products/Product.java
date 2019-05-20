@@ -12,6 +12,7 @@ public class Product {
     private String explanation;
     private int number;
     private int numberForBuy;
+    private String picID;
 
     public Product(String name, String factory, long price, double off, String description, int number) {
         this.name = name;
@@ -26,6 +27,14 @@ public class Product {
             this.isHaveOff = false;
         }
         this.numberForBuy = 0;
+    }
+
+    public String getPicID() {
+        return picID;
+    }
+
+    public void setPicID(String picID) {
+        this.picID = picID;
     }
 
     public boolean isHaveOff() {
