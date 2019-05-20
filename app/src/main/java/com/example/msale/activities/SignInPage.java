@@ -54,6 +54,7 @@ public class SignInPage extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 String username = username_edt.getText().toString();
                 String password = password_edt.getText().toString();
                 if (username.equals("M8")) {
