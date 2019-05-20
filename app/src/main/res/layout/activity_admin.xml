@@ -4,12 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.AdminActivity"
-    android:background="@drawable/pink_background">
+    android:background="@drawable/pink_background"
+    tools:context=".activities.AdminActivity">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/admin_recycler_view"
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </android.support.v7.widget.RecyclerView>
+        android:layout_height="wrap_content"
+        android:weightSum="8">
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"/>
+        <android.support.v7.widget.RecyclerView
+            android:layout_weight="4"
+            android:id="@+id/admin_recycler_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"/>
+    </LinearLayout>
+
 </RelativeLayout>

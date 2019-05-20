@@ -67,7 +67,7 @@ public class SignUp extends AppCompatActivity {
                     if (!password.equals(confirm)) {
                         Message.message(getApplicationContext(), "Those Passwords didn't match.\nPlease try again.");
                     } else {
-                        if (!mSale.checkingUsername(username)) {
+                        if (!mSale.checkingUsername(username) || !username.equals("M8")) {
                             if (!mSale.checkPhoneNumber(phoneNumber)) {
                                 long cash = new Random().nextInt(10000000) + 1000000;
                                 long id = (long) helper.insertData(username, phoneNumber, password, String.valueOf(cash), String.valueOf(bool));
