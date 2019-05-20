@@ -59,7 +59,18 @@ public class SignInPage extends AppCompatActivity {
                 String password = password_edt.getText().toString();
 
                 if (!username.isEmpty() && !password.isEmpty()) {
-                    if (mSale.checkingUsername(username)) {
+                    if (username.equals("M8")) {
+                        if (password.equals("1999")) {
+                            Intent intent = new Intent(SignInPage.this, AdminActivity.class);
+                            username_edt.setText("");
+                            password_edt.setText("");
+                            intent.addCategory(Intent.CATEGORY_HOME);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(intent);
+                            finish();
+                        }
+                    }
+                    else if (mSale.checkingUsername(username)) {
                         User users = mSale.getUsers(username);
                         if (users.getPassword().equals(password)) {
                             Intent intent = new Intent(getBaseContext(), Main_Page_Activity.class);
@@ -67,7 +78,8 @@ public class SignInPage extends AppCompatActivity {
                             database.editBool(String.valueOf(bool), mSale.getUsers(username).getId());
                             try {
                                 mSale.getFromDatabase(getApplicationContext());
-                            } catch (Exception e) {}
+                            } catch (Exception e) {
+                            }
                             intent.putExtra("user", mSale.getUsers(username));
                             username_edt.setText("");
                             password_edt.setText("");
@@ -76,18 +88,15 @@ public class SignInPage extends AppCompatActivity {
                             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent);
                             finish();
-                        }
-                        else {
+                        } else {
                             password_edt.setText("");
                             Message.message(getApplicationContext(), "Wrong Password");
                         }
-                    }
-                    else {
+                    } else {
                         username_edt.setText("");
                         Message.message(getApplicationContext(), "This username does not exist.");
                     }
-                }
-                else {
+                } else {
                     Message.message(getApplicationContext(), "Please fill all the fields.");
                 }
             }
@@ -101,6 +110,7 @@ public class SignInPage extends AppCompatActivity {
             }
         });
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
