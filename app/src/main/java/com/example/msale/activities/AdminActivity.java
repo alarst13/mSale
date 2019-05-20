@@ -55,6 +55,8 @@ public class AdminActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.action_add_product:
                 startActivity(new Intent(AdminActivity.this, AddingNewProducts.class));
+                mSale.mkAllList();
+                recyclerView.getAdapter().notifyDataSetChanged();
                 return true;
             case R.id.action_sign_out:
                 startActivity(new Intent(AdminActivity.this, Main_Page_Activity.class));

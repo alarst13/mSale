@@ -83,6 +83,7 @@
             android:layout_marginTop="10dp"
             tools:ignore="MissingConstraints"/>
         <Button
+            android:id="@+id/product_activity_add_to_cart"
             android:layout_width="75dp"
             android:layout_height="35dp"
             android:layout_below="@id/product_activity_list_view"
@@ -92,6 +93,7 @@
             android:layout_alignParentRight="true"
             android:text="Add TO CART"
             android:textStyle="bold"
-            android:textSize="8sp"/>
+            android:textSize="8sp"
+            tools:ignore="InvalidId" />
     </RelativeLayout>
 </ScrollView>
