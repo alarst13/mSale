@@ -13,7 +13,7 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="3"
+            android:layout_weight="7"
             android:orientation="vertical"
             android:weightSum="6">
 
@@ -42,7 +42,7 @@
             android:layout_width="0dp"
             android:layout_height="200dp"
             android:layout_marginTop="5dp"
-            android:layout_weight="7"
+            android:layout_weight="3"
             android:src="@drawable/orange_background"
             android:scaleType="fitXY"/>
     </LinearLayout>
