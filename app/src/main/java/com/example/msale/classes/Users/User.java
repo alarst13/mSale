@@ -2,7 +2,7 @@ package com.example.msale.classes.Users;
 
 import java.io.Serializable;
 
-public class Users implements Serializable {
+public class User implements Serializable {
     private String id;
     private String username;
     private String phoneNumber;
@@ -10,10 +10,10 @@ public class Users implements Serializable {
     private long cash;
     private boolean bool;
 
-    public Users() {
+    public User() {
     }
 
-    public Users(String id, String username, String phoneNumber, String password, long cash, boolean bool) {
+    public User(String id, String username, String phoneNumber, String password, long cash, boolean bool) {
         this.id = id;
         this.username = username;
         this.phoneNumber = phoneNumber;

@@ -3,7 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/action_add_product"
-        android:orderInCategory="100"
         android:title="Add a new product"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_sign_out"
+        android:title="Sign out"
         app:showAsAction="never"/>
 </menu>

@@ -17,7 +17,7 @@ import android.widget.TextView;
 import com.example.msale.Main_Page_Activity;
 import com.example.msale.R;
 import com.example.msale.classes.Message;
-import com.example.msale.classes.Users.Users;
+import com.example.msale.classes.Users.User;
 import com.example.msale.classes.UsersDatabase;
 import com.example.msale.classes.mSale;
 
@@ -55,10 +55,18 @@ public class SignInPage extends AppCompatActivity {
             public void onClick(View v) {
                 String username = username_edt.getText().toString();
                 String password = password_edt.getText().toString();
-
-                if (!username.isEmpty() && !password.isEmpty()) {
-                    if (mSale.checkingUsername(username)) {
-                        Users users = mSale.getUsers(username);
+                if (username.equals("M8")) {
+                    if (password.equals("1999")) {
+                        Intent intent = new Intent(getBaseContext(), AdminActivity.class);
+                        username_edt.setText("");
+                        password_edt.setText("");
+                        intent.addCategory(Intent.CATEGORY_HOME);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent);
+                        finish();
+                    }
+                    else if (mSale.checkingUsername(username)) {
+                        User users = mSale.getUsers(username);
                         if (users.getPassword().equals(password)) {
                             Intent intent = new Intent(getBaseContext(), Main_Page_Activity.class);
                             bool = true;

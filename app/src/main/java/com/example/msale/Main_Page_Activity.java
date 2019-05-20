@@ -18,7 +18,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.example.msale.activities.SignInPage;
-import com.example.msale.classes.Users.Users;
+import com.example.msale.classes.Users.User;
 import com.example.msale.classes.UsersDatabase;
 import com.example.msale.classes.mSale;
 
@@ -26,7 +26,7 @@ public class Main_Page_Activity extends AppCompatActivity implements NavigationV
 
     Boolean bool = false;
     UsersDatabase database = new UsersDatabase(this);
-    Users user;
+    User user;
     private RecyclerView recyclerView;
 
     @Override

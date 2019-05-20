@@ -102,10 +102,12 @@ public class SignUp extends AppCompatActivity {
                             }
                             else {
                                 Message.message(getApplicationContext(), "This Phone Number has been used.");
+                                phoneNumber_edt.setText("");
                             }
                         }
                         else {
                             Message.message(getApplicationContext(), "This Username already exists.");
+                            username_edt.setText("");
                         }
                     }
                 }

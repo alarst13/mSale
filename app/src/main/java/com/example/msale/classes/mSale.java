@@ -3,7 +3,7 @@ package com.example.msale.classes;
 import android.content.Context;
 
 import com.example.msale.classes.Products.Product;
-import com.example.msale.classes.Users.Users;
+import com.example.msale.classes.Users.User;
 
 import java.util.LinkedList;
 
@@ -11,16 +11,16 @@ public class mSale {
     private mSale() {
     }
 
-    public static Users user;
-    public static LinkedList <Users> users = new LinkedList<>();
+    public static User user;
+    public static LinkedList <User> users = new LinkedList<>();
     public static LinkedList<History> history = new LinkedList<>();
     public static LinkedList <Product> products = new LinkedList<>();
     public static LinkedList<Product> Cart = new LinkedList<>();
     public static LinkedList<Product> productsForShow = new LinkedList<>();
 
-    public static Users mkUser(String string) {
+    public static User mkUser(String string) {
         String[] strings = string.split(" ");
-        return new Users(strings[0], strings[1], strings[2], strings[3], Long.parseLong(strings[4]), Boolean.parseBoolean(strings[5]));
+        return new User(strings[0], strings[1], strings[2], strings[3], Long.parseLong(strings[4]), Boolean.parseBoolean(strings[5]));
     }
 
     public static void getFromDatabase(Context context) {
@@ -34,7 +34,7 @@ public class mSale {
     }
 
     public static boolean checkingUsername (String username){
-        for (Users user : users) {
+        for (User user : users) {
             if (user.getUsername().equals(username)){
                 return true;
             }
@@ -43,7 +43,7 @@ public class mSale {
     }
 
     public static boolean checkPhoneNumber(String phoneNumber){
-        for (Users user : users) {
+        for (User user : users) {
             if (user.getPhoneNumber().equals(phoneNumber)){
                 return true;
             }
@@ -51,8 +51,8 @@ public class mSale {
         return false;
     }
 
-    public static Users getUsers(String username){
-        for (Users user : users) {
+    public static User getUsers(String username){
+        for (User user : users) {
             if (user.getUsername().equals(username)){
                 return user;
             }
@@ -68,11 +68,11 @@ public class mSale {
         }
     }
 
-    public static Users getUser() {
+    public static User getUser() {
         return user;
     }
 
-    public static void setUser(Users user) {
+    public static void setUser(User user) {
         mSale.user = user;
     }
 }
