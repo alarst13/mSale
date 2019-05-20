@@ -12,7 +12,7 @@ public class Laptop extends Electronic {
     public static void mkShowList(){
         mSale.productsForShow.clear();
         for (Product p:mSale.products) {
-            if(p instanceof Laptop){
+            if(p.getType().equals("Laptop")){
                 mSale.productsForShow.addLast(p);
             }
         }

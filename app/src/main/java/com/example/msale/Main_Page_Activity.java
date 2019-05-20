@@ -3,6 +3,7 @@ package com.example.msale;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -34,6 +35,7 @@ public class Main_Page_Activity extends AppCompatActivity implements NavigationV
     UsersDatabase database = new UsersDatabase(this);
     User user;
     private RecyclerView recyclerView;
+    ProductsOnSaleListAdapter productsOnSaleListAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +57,7 @@ public class Main_Page_Activity extends AppCompatActivity implements NavigationV
         mSale.getAllProductsFromDatabase(this);
         mSale.mkAllList();
 
-        ProductsOnSaleListAdapter productsOnSaleListAdapter = new ProductsOnSaleListAdapter(mSale.productsForShow);
+        productsOnSaleListAdapter = new ProductsOnSaleListAdapter(mSale.productsForShow);
         recyclerView.setAdapter(productsOnSaleListAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -144,8 +146,7 @@ public class Main_Page_Activity extends AppCompatActivity implements NavigationV
             } else {
             }
         } else if (id == R.id.nav_categories) {
-            startActivity(new Intent( this, ProductTypeActivity.class));
-            recyclerView.getAdapter().notifyDataSetChanged();
+            startActivityForResult(new Intent( this, ProductTypeActivity.class), 0);
         } else if (id == R.id.nav_cart) {
 
         } else if (id == R.id.nav_history) {
@@ -158,5 +159,15 @@ public class Main_Page_Activity extends AppCompatActivity implements NavigationV
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == 0 && resultCode == RESULT_OK) {
+
+            productsOnSaleListAdapter.notifyDataSetChanged();
+        }
     }
 }

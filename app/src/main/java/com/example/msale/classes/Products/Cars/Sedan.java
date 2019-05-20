@@ -12,7 +12,7 @@ public class Sedan extends Car {
     public static void mkShowList(){
         mSale.productsForShow.clear();
         for (Product p:mSale.products) {
-            if(p instanceof Sedan){
+            if(p.getType().equals("Sedan")){
                 mSale.productsForShow.addLast(p);
             }
         }

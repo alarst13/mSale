@@ -11,7 +11,7 @@ public class Car extends Product {
     public static void mkShowList(){
         mSale.productsForShow.clear();
         for (Product p: mSale.products) {
-            if(p instanceof Car){
+            if(p.getType().equals("Limousine") || p.getType().equals("Sedan") ){
                 mSale.productsForShow.addLast(p);
             }
         }

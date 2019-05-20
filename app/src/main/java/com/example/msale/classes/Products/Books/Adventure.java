@@ -12,7 +12,7 @@ public class Adventure extends Book {
     public static void mkShowList(){
         mSale.productsForShow.clear();
         for (Product p:mSale.products) {
-            if(p instanceof Adventure){
+            if(p.getType().equals("Adventure")){
                 mSale.productsForShow.addLast(p);
             }
         }

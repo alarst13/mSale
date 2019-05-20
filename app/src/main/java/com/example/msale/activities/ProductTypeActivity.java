@@ -70,6 +70,7 @@ public class ProductTypeActivity extends AppCompatActivity {
                 break;
 
         }
+        setResult(RESULT_OK);
         finish();
     }
 }
