@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/pink_background"
-        android:orientation="vertical">
+        android:orientation="vertical"/>
 
         <LinearLayout
             android:id="@+id/products_first_linear_layout"
@@ -102,5 +102,4 @@
             android:textSize="8sp"
             android:textStyle="bold"
             tools:ignore="InvalidId" />
-    </>
 </ScrollView>
