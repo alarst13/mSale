@@ -45,7 +45,7 @@
             android:layout_centerInParent="true"
             android:layout_marginTop="20dp"
             android:orientation="vertical"
-            android:weightSum="7">
+            android:weightSum="8">
 
             <TextView
                 android:id="@+id/adding_new_products_txt"
@@ -60,6 +60,13 @@
                 android:textColor="#ff3a3a"
                 android:textSize="20sp"
                 android:textStyle="bold" />
+            <EditText
+                android:id="@+id/adding_product_product_kind"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:hint="Product type"
+                android:textSize="15sp" />
 
             <EditText
                 android:id="@+id/adding_product_product_name"

@@ -26,7 +26,8 @@ public class ProductsDatabase {
             String off = cursor.getString(cursor.getColumnIndex(myDbHelper.OFF));
             String description = cursor.getString(cursor.getColumnIndex(myDbHelper.DESCRIPTION));
             String number = cursor.getString(cursor.getColumnIndex(myDbHelper.NUMBER));
-            buffer.append(cid + " " + name + " " + factory + " " + price + " " + off + " " + description + " " + number + " " + "\n");
+            String image = cursor.getString(cursor.getColumnIndex(myDbHelper.PIC_ID));
+            buffer.append(cid + " " + name + " " + factory + " " + price + " " + off + " " + description + " " + number + " " + image + " " + "\n");
         }
         return buffer.toString();
     }
