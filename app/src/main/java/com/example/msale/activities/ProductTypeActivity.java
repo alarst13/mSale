@@ -1,10 +1,12 @@
 package com.example.msale.activities;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.msale.Main_Page_Activity;
 import com.example.msale.R;
 import com.example.msale.classes.Products.Books.Adventure;
 import com.example.msale.classes.Products.Books.Book;
@@ -29,9 +31,7 @@ public class ProductTypeActivity extends AppCompatActivity {
     }
 
     public void clickModelButton(View view) {
-
         switch (view.getTag().toString()) {
-
             case "products":
                 mSale.mkAllList();
                 break;
@@ -68,7 +68,6 @@ public class ProductTypeActivity extends AppCompatActivity {
             case "tablets_layout":
                 Tablet.mkShowList();
                 break;
-
         }
         setResult(RESULT_OK);
         finish();

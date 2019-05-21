@@ -54,8 +54,10 @@ public class Main_Page_Activity extends AppCompatActivity implements NavigationV
         FloatingActionButton fab = findViewById(R.id.fab);
         recyclerView = findViewById(R.id.content_user_recycler_view);
 
-        mSale.getAllProductsFromDatabase(this);
-        mSale.mkAllList();
+        try {
+            mSale.getAllProductsFromDatabase(this);
+            mSale.mkAllList();
+        } catch (Exception e){}
 
         productsOnSaleListAdapter = new ProductsOnSaleListAdapter(mSale.productsForShow);
         recyclerView.setAdapter(productsOnSaleListAdapter);
