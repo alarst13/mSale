@@ -1,5 +1,6 @@
 package com.example.msale.classes;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -14,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.msale.R;
+import com.example.msale.activities.ProductActivity;
 import com.example.msale.classes.Products.Product;
 
 import java.io.FileNotFoundException;
@@ -23,9 +25,11 @@ import java.util.List;
 public class ProductsOnSaleListAdapter extends RecyclerView.Adapter<ProductsOnSaleListAdapter.ProductViewHolder> {
 
     private List<Product> products;
+    private Activity activity;
 
-    public ProductsOnSaleListAdapter(List<Product> products) {
+    public ProductsOnSaleListAdapter(List<Product> products, Activity activity) {
         this.products = products;
+        this.activity = activity;
     }
 
     @NonNull
@@ -37,7 +41,7 @@ public class ProductsOnSaleListAdapter extends RecyclerView.Adapter<ProductsOnSa
 
     @Override
     public void onBindViewHolder(@NonNull ProductViewHolder productViewHolder, int i) {
-        productViewHolder.bindView(products.get(i));
+        productViewHolder.bindView(products.get(i), activity);
     }
 
     @Override
@@ -61,7 +65,17 @@ public class ProductsOnSaleListAdapter extends RecyclerView.Adapter<ProductsOnSa
             txt_off_price = itemView.findViewById(R.id.off_price_txt_products_on_sale);
         }
 
-        public void bindView(Product product) {
+        public void bindView(final Product product, final Activity activity) {
+
+            rootView.findViewById(R.id.root_view).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(activity, ProductActivity.class);
+                    intent.putExtra("product", product);
+                    activity.startActivity(intent);
+                }
+            });
+
             txt_description.setText(product.getName());
             if (product.isHaveOff()) {
                 txt_price.setText(String.valueOf(product.getPrice()));
@@ -78,6 +92,7 @@ public class ProductsOnSaleListAdapter extends RecyclerView.Adapter<ProductsOnSa
                         e.printStackTrace();
                     }
                 }
+
             } else {
                 txt_off_price.setText(String.valueOf(product.getFinalPrice()));
             }

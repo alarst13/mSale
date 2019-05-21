@@ -22,8 +22,6 @@ import android.view.WindowManager;
 
 import com.example.msale.activities.ProductTypeActivity;
 import com.example.msale.activities.SignInPage;
-import com.example.msale.classes.Products.Books.Book;
-import com.example.msale.classes.Products.Electronics.Electronic;
 import com.example.msale.classes.ProductsOnSaleListAdapter;
 import com.example.msale.classes.Users.User;
 import com.example.msale.classes.UsersDatabase;
@@ -59,7 +57,7 @@ public class Main_Page_Activity extends AppCompatActivity implements NavigationV
             mSale.mkAllList();
         } catch (Exception e){}
 
-        productsOnSaleListAdapter = new ProductsOnSaleListAdapter(mSale.productsForShow);
+        productsOnSaleListAdapter = new ProductsOnSaleListAdapter(mSale.productsForShow, this);
         recyclerView.setAdapter(productsOnSaleListAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setItemAnimator(new DefaultItemAnimator());

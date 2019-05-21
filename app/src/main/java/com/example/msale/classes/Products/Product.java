@@ -4,7 +4,9 @@ import com.example.msale.classes.History;
 import com.example.msale.classes.Users.User;
 import com.example.msale.classes.mSale;
 
-public class Product {
+import java.io.Serializable;
+
+public class Product implements Serializable {
     private String type;
     private String name;
     private String factory;
