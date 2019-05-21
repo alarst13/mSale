@@ -76,6 +76,7 @@ public class mSale {
 
             for (String s1 : productStrings) {
                 String[] fieldsStrings = s1.split(" ");
+
                 Product product = new Product(fieldsStrings[1], fieldsStrings[2], Long.valueOf(fieldsStrings[3]), Double.valueOf(fieldsStrings[4]), fieldsStrings[5], Integer.valueOf(fieldsStrings[6]));
                 products.add(product);
             }
