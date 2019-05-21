@@ -39,15 +39,13 @@
                 android:layout_weight="2"
                 android:paddingLeft="5dp" />
         </LinearLayout>
-
         <ImageView
             android:id="@+id/products_on_sale_layout_image_view"
             android:layout_width="0dp"
             android:layout_height="200dp"
             android:layout_marginTop="5dp"
             android:layout_weight="3"
-            android:scaleType="fitXY"
-            android:src="@drawable/orange_background" />
+            android:scaleType="fitXY"/>
     </LinearLayout>
 
 </RelativeLayout>

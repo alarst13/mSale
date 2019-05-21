@@ -32,40 +32,40 @@ public class ProductTypeActivity extends AppCompatActivity {
 
         switch (view.getTag().toString()) {
 
-            case "product":
+            case "products":
                 mSale.mkAllList();
                 break;
-            case "book":
+            case "books":
                 Book.mkShowList();
                 break;
-            case "adventure":
+            case "adventure_books":
                 Adventure.mkShowList();
                 break;
-            case "love affair":
+            case "love_affair_books_layout":
                 LoveAffair.mkShowList();
                 break;
-            case "Science fiction":
+            case "science_fiction_books_layout":
                 ScienceFiction.mkShowList();
                 break;
-            case "car":
+            case "cars_layout":
                 Car.mkShowList();
                 break;
-            case "limousine":
+            case "limousin_cars_layout":
                 Limousine.mkShowList();
                 break;
-            case "sedan":
+            case "sedan_cars_layout":
                 Sedan.mkShowList();
                 break;
-            case "electronic":
+            case "electronics_layout":
                 Electronic.mkShowList();
                 break;
-            case "cellphone":
+            case "cellphones_img":
                 CellPhone.mkShowList();
                 break;
-            case "laptop":
+            case "laptops":
                 Laptop.mkShowList();
                 break;
-            case "tablet":
+            case "tablets_layout":
                 Tablet.mkShowList();
                 break;
 

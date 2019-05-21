@@ -6,124 +6,295 @@
     android:orientation="vertical"
     tools:context=".activities.ProductTypeActivity">
 
-    <Button
-        android:id="@+id/product_type_product"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:clickable="true"
         android:onClick="clickModelButton"
-        android:tag="product"
-        android:text="product"
-        tools:ignore="MissingConstraints" />
+        android:tag="products"
+        android:weightSum="4">
 
-    <Button
-        android:id="@+id/product_type_book"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:onClick="clickModelButton"
-        android:tag="book"
-        android:text="book"
-        tools:ignore="MissingConstraints" />
+        <ImageView
+            android:id="@+id/all_products_img"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:scaleType="fitXY" />
 
-    <Button
-        android:id="@+id/product_type_adventure"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:onClick="clickModelButton"
-        android:tag="adventure"
-        android:text="adventure"
-        tools:ignore="MissingConstraints" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="3"
+            android:text="All products" />
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/product_type_love_affair"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:clickable="true"
         android:onClick="clickModelButton"
-        android:tag="love affair"
-        android:text="love affair"
-        tools:ignore="MissingConstraints" />
+        android:tag="books"
+        android:weightSum="4">
 
-    <Button
-        android:id="@+id/product_type_Science_fiction"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:onClick="clickModelButton"
-        android:tag="Science fiction"
-        android:text="Science fiction"
-        tools:ignore="MissingConstraints" />
+        <ImageView
+            android:id="@+id/books_img"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:scaleType="fitXY" />
 
-    <Button
-        android:id="@+id/product_type_car"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:onClick="clickModelButton"
-        android:tag="car"
-        android:text="car"
-        tools:ignore="MissingConstraints" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="3"
+            android:text="Books" />
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/product_type_limousine"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:clickable="true"
         android:onClick="clickModelButton"
-        android:tag="limousine"
-        android:text="limousine"
-        tools:ignore="MissingConstraints" />
+        android:tag="adventure_books"
+        android:weightSum="4">
 
-    <Button
-        android:id="@+id/product_type_sedan"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:onClick="clickModelButton"
-        android:tag="sedan"
-        android:text="sedan"
-        tools:ignore="MissingConstraints" />
+        <ImageView
+            android:id="@+id/adventure_books_img"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:scaleType="fitXY" />
 
-    <Button
-        android:id="@+id/product_type_electronic"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:onClick="clickModelButton"
-        android:tag="electronic"
-        android:text="electronic"
-        tools:ignore="MissingConstraints" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="3"
+            android:text="Adventure books" />
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/product_type_cellphone"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:onClick="clickModelButton"
-        android:tag="cellphone"
-        android:text="cellphone"
-        tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/product_type_laptop"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:clickable="true"
         android:onClick="clickModelButton"
-        android:tag="laptop"
-        android:text="laptop"
-        tools:ignore="MissingConstraints" />
+        android:tag="love_affair_books_layout"
+        android:weightSum="4">
 
-    <Button
-        android:id="@+id/product_type_tablet"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        <ImageView
+            android:id="@+id/love_affair_books_img"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="3"
+            android:text="Love affair books" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:clickable="true"
         android:onClick="clickModelButton"
-        android:tag="tablet"
-        android:text="tablet"
-        tools:ignore="MissingConstraints" />
+        android:tag="science_fiction_books_layout"
+        android:weightSum="4">
+
+        <ImageView
+            android:id="@+id/science_fiction_books_img"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="3"
+            android:text="Science fiction books" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:clickable="true"
+        android:onClick="clickModelButton"
+        android:tag="cars_layout"
+        android:weightSum="4">
+
+        <ImageView
+            android:id="@+id/cars_img"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="3"
+            android:text="Cars" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:clickable="true"
+        android:onClick="clickModelButton"
+        android:tag="limousin_cars_layout"
+        android:weightSum="4">
+
+        <ImageView
+            android:id="@+id/limousin_cars_img"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="3"
+            android:text="Limousin brand" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:clickable="true"
+        android:onClick="clickModelButton"
+        android:tag="sedan_cars_layout"
+        android:weightSum="4">
+
+        <ImageView
+            android:id="@+id/sedan_cars_img"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="3"
+            android:text="Sedan brand" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:clickable="true"
+        android:onClick="clickModelButton"
+        android:tag="electronics_layout"
+        android:weightSum="4">
+
+        <ImageView
+            android:id="@+id/electronics_img"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="3"
+            android:text="Electronics" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:clickable="true"
+        android:onClick="clickModelButton"
+        android:tag="cellphones_layout"
+        android:weightSum="4">
+
+        <ImageView
+            android:id="@+id/cellphones_img"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="3"
+            android:text="Cell phones" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:clickable="true"
+        android:onClick="clickModelButton"
+        android:tag="laptops"
+        android:weightSum="4">
+
+        <ImageView
+            android:id="@+id/laptops_img"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="3"
+            android:text="Laptops" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:clickable="true"
+        android:onClick="clickModelButton"
+        android:tag="tablets_layout"
+        android:weightSum="4">
+
+        <ImageView
+            android:id="@+id/tablets_img"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="3"
+            android:text="Tablets" />
+    </LinearLayout>
 
 </LinearLayout>

@@ -20,6 +20,7 @@ import android.widget.ImageView;
 
 import com.example.msale.R;
 import com.example.msale.classes.Products.Product;
+import com.example.msale.classes.ProductsDatabase;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -70,8 +71,6 @@ public class AddingNewProducts extends AppCompatActivity {
                         Integer.valueOf(numberEditText.getTag().toString().trim()));
 
                 product.setPicID(picID);
-
-
             }
         });
 
