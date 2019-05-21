@@ -50,7 +50,7 @@ public class ProductsDatabase {
 
     static class myDbHelper extends SQLiteOpenHelper {
 
-        private static final String DATABASE_NAME = "myDatabase.db";
+        private static final String DATABASE_NAME = "productsDatabase.db";
         private static final String TABLE_NAME = "products";
         private static final int DATABASE_Version = 1;
         private static final String UID = "_id";
