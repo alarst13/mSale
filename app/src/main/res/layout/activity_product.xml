@@ -7,93 +7,100 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@drawable/pink_background"
+        android:orientation="vertical">
 
         <LinearLayout
             android:id="@+id/products_first_linear_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:weightSum="8">
-
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2" />
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/product_activity_image_view"
-                android:layout_width="0dp"
+                android:layout_width="200dp"
                 android:layout_height="200dp"
-                android:layout_weight="4"
                 android:scaleType="fitXY" />
 
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/products_second_linear_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/products_first_linear_layout"
-            android:layout_marginTop="5dp"
-            android:orientation="vertical"
-            android:weightSum="4">
-
-            <TextView
-                android:id="@+id/product_activity_name"
+            <LinearLayout
+                android:id="@+id/products_second_linear_layout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Product name"
-                android:paddingLeft="5dp" />
-
-            <TextView
-                android:id="@+id/product_activity_description"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_below="@id/product_activity_image_view"
                 android:layout_marginTop="5dp"
-                android:hint="Description"
-                android:paddingLeft="5dp" />
+                android:orientation="vertical"
+                android:weightSum="4">
 
-            <TextView
-                android:id="@+id/product_activity_price"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:hint="Price"
-                android:paddingLeft="5dp" />
+                <TextView
+                    android:layout_gravity="center"
+                    android:id="@+id/product_activity_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:hint="Product name"
+                    android:paddingLeft="5dp"
+                    android:textColor="#ffff"
+                    android:textStyle="bold"
+                    android:layout_weight="1"/>
 
-            <TextView
-                android:id="@+id/product_activity_off_price"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:hint="Off price"
-                android:paddingLeft="5dp" />
+                <TextView
+                    android:layout_gravity="center"
+                    android:id="@+id/product_activity_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="5dp"
+                    android:hint="Description"
+                    android:paddingLeft="5dp"
+                    android:layout_weight="1"
+                    android:textColor="#ffff"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:id="@+id/product_activity_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:hint="Price"
+                    android:paddingLeft="5dp"
+                    android:textColor="#ffff"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:id="@+id/product_activity_off_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="5dp"
+                    android:hint="Off price"
+                    android:paddingLeft="5dp"
+                    android:textColor="#ffff"
+                    android:textStyle="bold" />
+            </LinearLayout>
         </LinearLayout>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/product_activity_list_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/products_second_linear_layout"
-            android:layout_marginTop="10dp"
-            tools:ignore="MissingConstraints"/>
+            android:layout_below="@id/products_first_linear_layout"
+            android:layout_marginTop="10dp" />
+
         <Button
             android:id="@+id/product_activity_add_to_cart"
             android:layout_width="75dp"
             android:layout_height="35dp"
             android:layout_below="@id/product_activity_list_view"
-            android:background="@drawable/sign_in_btn"
+            android:layout_alignParentRight="true"
             android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
-            android:layout_alignParentRight="true"
+            android:background="@drawable/sign_in_btn"
             android:text="Add TO CART"
-            android:textStyle="bold"
             android:textSize="8sp"
+            android:textStyle="bold"
             tools:ignore="InvalidId" />
-    </RelativeLayout>
+    </>
 </ScrollView>

@@ -20,9 +20,11 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_weight="1"
+            android:background="@drawable/products"
             android:scaleType="fitXY" />
 
         <TextView
+            android:layout_marginLeft="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -41,6 +43,7 @@
 
         <ImageView
             android:id="@+id/books_img"
+            android:background="@drawable/books"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_weight="1"
@@ -51,6 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="3"
+            android:layout_marginLeft="5dp"
             android:text="Books" />
     </LinearLayout>
 
@@ -65,12 +69,14 @@
 
         <ImageView
             android:id="@+id/adventure_books_img"
+            android:background="@drawable/adventure"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_weight="1"
             android:scaleType="fitXY" />
 
         <TextView
+            android:layout_marginLeft="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -89,6 +95,7 @@
         android:weightSum="4">
 
         <ImageView
+            android:background="@drawable/loveaffair"
             android:id="@+id/love_affair_books_img"
             android:layout_width="45dp"
             android:layout_height="45dp"
@@ -96,6 +103,7 @@
             android:scaleType="fitXY" />
 
         <TextView
+            android:layout_marginLeft="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -113,6 +121,7 @@
         android:weightSum="4">
 
         <ImageView
+            android:background="@drawable/science"
             android:id="@+id/science_fiction_books_img"
             android:layout_width="45dp"
             android:layout_height="45dp"
@@ -120,6 +129,7 @@
             android:scaleType="fitXY" />
 
         <TextView
+            android:layout_marginLeft="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -138,6 +148,7 @@
         android:weightSum="4">
 
         <ImageView
+            android:background="@drawable/cars"
             android:id="@+id/cars_img"
             android:layout_width="45dp"
             android:layout_height="45dp"
@@ -145,6 +156,7 @@
             android:scaleType="fitXY" />
 
         <TextView
+            android:layout_marginLeft="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -163,6 +175,7 @@
         android:weightSum="4">
 
         <ImageView
+            android:background="@drawable/limousine"
             android:id="@+id/limousin_cars_img"
             android:layout_width="45dp"
             android:layout_height="45dp"
@@ -170,6 +183,7 @@
             android:scaleType="fitXY" />
 
         <TextView
+            android:layout_marginLeft="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -187,6 +201,7 @@
         android:weightSum="4">
 
         <ImageView
+            android:background="@drawable/sedan"
             android:id="@+id/sedan_cars_img"
             android:layout_width="45dp"
             android:layout_height="45dp"
@@ -194,6 +209,7 @@
             android:scaleType="fitXY" />
 
         <TextView
+            android:layout_marginLeft="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -211,6 +227,7 @@
         android:weightSum="4">
 
         <ImageView
+            android:background="@drawable/electronics"
             android:id="@+id/electronics_img"
             android:layout_width="45dp"
             android:layout_height="45dp"
@@ -218,6 +235,7 @@
             android:scaleType="fitXY" />
 
         <TextView
+            android:layout_marginLeft="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -235,6 +253,7 @@
         android:weightSum="4">
 
         <ImageView
+            android:background="@drawable/cellphone"
             android:id="@+id/cellphones_img"
             android:layout_width="45dp"
             android:layout_height="45dp"
@@ -242,6 +261,7 @@
             android:scaleType="fitXY" />
 
         <TextView
+            android:layout_marginLeft="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -259,6 +279,7 @@
         android:weightSum="4">
 
         <ImageView
+            android:background="@drawable/laptop"
             android:id="@+id/laptops_img"
             android:layout_width="45dp"
             android:layout_height="45dp"
@@ -266,6 +287,7 @@
             android:scaleType="fitXY" />
 
         <TextView
+            android:layout_marginLeft="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -283,6 +305,7 @@
         android:weightSum="4">
 
         <ImageView
+            android:background="@drawable/tablet"
             android:id="@+id/tablets_img"
             android:layout_width="45dp"
             android:layout_height="45dp"
@@ -290,6 +313,7 @@
             android:scaleType="fitXY" />
 
         <TextView
+            android:layout_marginLeft="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
