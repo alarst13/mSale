@@ -20,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 
 import com.example.msale.R;
+import com.example.msale.classes.Message;
 import com.example.msale.classes.Products.Product;
 import com.example.msale.classes.ProductsDatabase;
 
@@ -66,15 +67,17 @@ public class AddingNewProducts extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Product product = new Product(spinner.getSelectedItem().toString().trim(), productNameEditText.getText().toString().trim(),
-                        factoryEditText.getTag().toString().trim(),
-                        Long.valueOf(productPriceEditText.getTag().toString().trim()),
-                        Double.valueOf(productOffPriceEditText.getTag().toString().trim()),
-                        descriptionEditText.getTag().toString().trim(),
-                        Integer.valueOf(numberEditText.getTag().
+                Product product = new Product(productNameEditText.getText().toString().trim(),
+                        factoryEditText.getText().toString().trim(),
+                        Long.valueOf(productPriceEditText.getText().toString().trim()),
+                        Double.valueOf(productOffPriceEditText.getText().toString().trim()),
+                        descriptionEditText.getText().toString().trim(),
+                        Integer.valueOf(numberEditText.getText().
                                 toString().trim()));
+                product.setType(spinner.getSelectedItem().toString());
                 product.setPicID(picID);
                 productsDatabase.insertData(product.getType(), product.getName(), product.getFactory(), String.valueOf(product.getPrice()), String.valueOf(product.getOff()), product.getExplanation(), String.valueOf(product.getNumber()), product.getPicID());
+                Message.message(getApplicationContext(), String.valueOf(productsDatabase.getData()));
             }
         });
 

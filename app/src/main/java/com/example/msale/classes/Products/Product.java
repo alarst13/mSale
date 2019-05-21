@@ -16,8 +16,7 @@ public class Product {
     private int numberForBuy;
     private String picID;
 
-    public Product(String type, String name, String factory, long price, double off, String explanation, int number) {
-        this.type = type;
+    public Product(String name, String factory, long price, double off, String explanation, int number) {
         this.name = name;
         this.factory = factory;
         this.price = price;
