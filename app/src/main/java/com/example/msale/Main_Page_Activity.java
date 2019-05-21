@@ -23,6 +23,7 @@ import android.view.WindowManager;
 import com.example.msale.activities.MyCartActivity;
 import com.example.msale.activities.ProductTypeActivity;
 import com.example.msale.activities.SignInPage;
+import com.example.msale.classes.Message;
 import com.example.msale.classes.ProductsOnSaleListAdapter;
 import com.example.msale.classes.Users.User;
 import com.example.msale.classes.UsersDatabase;
@@ -150,10 +151,14 @@ public class Main_Page_Activity extends AppCompatActivity implements NavigationV
             startActivityForResult(new Intent( this, ProductTypeActivity.class), 0);
         } else if (id == R.id.nav_cart) {
             Intent intent = new Intent(this , MyCartActivity.class);
-            intent.putExtra("user" , user);
+            intent.putExtra("user_second", user);
+            Message.message(getApplicationContext(),user.getUsername());
             startActivity(intent);
         } else if (id == R.id.nav_history) {
-
+            if (bool == true) {
+            }
+            else{
+            }
         } else if (id == R.id.nav_contact) {
 
         } else if (id == R.id.nav_mSale) {

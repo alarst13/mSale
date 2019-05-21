@@ -129,7 +129,7 @@ public class Product implements Serializable {
         this.number = this.number - this.numberForBuy;
         user.setCash(user.getCash() - (this.numberForBuy * this.getFinalPrice()));
         //add date
-        mSale.history.addLast(new History(mSale.user.getUsername() + " " + this.numberForBuy, this.name, this.getFinalPrice(), null, this.getClass().toString()));
+        mSale.history.addLast(new History(user.getUsername() + " " + this.numberForBuy, this.name, this.getFinalPrice(), null, this.getClass().toString()));
         this.numberForBuy = 0;
         return true;
     }

@@ -24,15 +24,13 @@ public class MyCartActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     ImageView check , corse ;
-    Intent intent;
     User user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_cart);
 
-        intent = getIntent();
-        user = (User) intent.getSerializableExtra("user");
+        user = (User) getIntent().getSerializableExtra("user_second");
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("My Cart");

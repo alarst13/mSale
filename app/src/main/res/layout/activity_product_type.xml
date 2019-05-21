@@ -17,10 +17,10 @@
 
         <ImageView
             android:id="@+id/all_products_img"
+            android:background="@drawable/ic_arrow_drop_down_black_24dp"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_weight="1"
-            android:background="@drawable/products"
             android:scaleType="fitXY" />
 
         <TextView
@@ -42,8 +42,8 @@
         android:weightSum="4">
 
         <ImageView
+            android:background="@drawable/ic_arrow_drop_down_black_24dp"
             android:id="@+id/books_img"
-            android:background="@drawable/books"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_weight="1"
@@ -148,7 +148,7 @@
         android:weightSum="4">
 
         <ImageView
-            android:background="@drawable/cars"
+            android:background="@drawable/ic_arrow_drop_down_black_24dp"
             android:id="@+id/cars_img"
             android:layout_width="45dp"
             android:layout_height="45dp"
@@ -227,7 +227,7 @@
         android:weightSum="4">
 
         <ImageView
-            android:background="@drawable/electronics"
+            android:background="@drawable/ic_arrow_drop_down_black_24dp"
             android:id="@+id/electronics_img"
             android:layout_width="45dp"
             android:layout_height="45dp"
