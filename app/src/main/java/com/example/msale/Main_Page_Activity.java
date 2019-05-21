@@ -20,6 +20,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.example.msale.activities.MyCartActivity;
 import com.example.msale.activities.ProductTypeActivity;
 import com.example.msale.activities.SignInPage;
 import com.example.msale.classes.ProductsOnSaleListAdapter;
@@ -148,7 +149,9 @@ public class Main_Page_Activity extends AppCompatActivity implements NavigationV
         } else if (id == R.id.nav_categories) {
             startActivityForResult(new Intent( this, ProductTypeActivity.class), 0);
         } else if (id == R.id.nav_cart) {
-
+            Intent intent = new Intent(this , MyCartActivity.class);
+            intent.putExtra("user" , user);
+            startActivity(intent);
         } else if (id == R.id.nav_history) {
 
         } else if (id == R.id.nav_contact) {

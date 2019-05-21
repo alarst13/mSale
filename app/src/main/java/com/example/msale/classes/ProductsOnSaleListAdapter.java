@@ -20,6 +20,7 @@ import com.example.msale.classes.Products.Product;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.util.LinkedList;
 import java.util.List;
 
 public class ProductsOnSaleListAdapter extends RecyclerView.Adapter<ProductsOnSaleListAdapter.ProductViewHolder> {
