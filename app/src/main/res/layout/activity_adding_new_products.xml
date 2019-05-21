@@ -63,11 +63,10 @@
 
             <Spinner
                 android:id="@+id/adding_new_product_type_spinner"
-                android:layout_marginTop="13dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:entries="@array/type_spinner_names">
-            </Spinner>
+                android:layout_marginTop="13dp"
+                android:entries="@array/type_spinner_names"></Spinner>
 
             <EditText
                 android:id="@+id/adding_product_product_name"
@@ -91,15 +90,16 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:hint="Price"
+                android:inputType="number"
                 android:textSize="15sp" />
 
             <EditText
                 android:id="@+id/adding_product_off_price"
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:hint="Off Price"
+                android:inputType="number"
                 android:textSize="15sp" />
 
             <EditText
@@ -116,6 +116,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:hint="Number"
+                android:inputType="number"
                 android:textSize="15sp" />
         </LinearLayout>
 
