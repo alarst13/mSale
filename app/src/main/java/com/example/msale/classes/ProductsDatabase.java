@@ -15,11 +15,12 @@ public class ProductsDatabase {
 
     public String getData() {
         SQLiteDatabase db = helper.getWritableDatabase();
-        String[] columns = {myDbHelper.UID, myDbHelper.NAME , myDbHelper.FACTORY, myDbHelper.PRICE, myDbHelper.OFF, myDbHelper.DESCRIPTION, myDbHelper.NUMBER};
+        String[] columns = {myDbHelper.UID, myDbHelper.ProductType, myDbHelper.NAME , myDbHelper.FACTORY, myDbHelper.PRICE, myDbHelper.OFF, myDbHelper.DESCRIPTION, myDbHelper.NUMBER, myDbHelper.PIC_ID};
         Cursor cursor = db.query(myDbHelper.TABLE_NAME, columns, null, null, null, null, null);
         StringBuffer buffer = new StringBuffer();
         while (cursor.moveToNext()) {
             int cid = cursor.getInt(cursor.getColumnIndex(myDbHelper.UID));
+            String productType = cursor.getString(cursor.getColumnIndex(myDbHelper.ProductType));
             String name = cursor.getString(cursor.getColumnIndex(myDbHelper.NAME));
             String factory = cursor.getString(cursor.getColumnIndex(myDbHelper.FACTORY));
             String price = cursor.getString(cursor.getColumnIndex(myDbHelper.PRICE));
@@ -32,9 +33,10 @@ public class ProductsDatabase {
         return buffer.toString();
     }
 
-    public long insertData(String name, String factory, String price, String off, String description, String number, String picID) {
+    public long insertData(String productType, String name, String factory, String price, String off, String description, String number, String picID) {
         SQLiteDatabase db = helper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
+        contentValues.put(myDbHelper.ProductType, productType);
         contentValues.put(myDbHelper.NAME, name);
         contentValues.put(myDbHelper.FACTORY, factory);
         contentValues.put(myDbHelper.PRICE, price);
@@ -52,6 +54,7 @@ public class ProductsDatabase {
         private static final String TABLE_NAME = "products";
         private static final int DATABASE_Version = 1;
         private static final String UID = "_id";
+        private static final String ProductType = "ProductType";
         private static final String NAME = "name";
         private static final String FACTORY = "factory";
         private static final String PRICE = "price";
@@ -59,7 +62,7 @@ public class ProductsDatabase {
         private static final String DESCRIPTION = "description";
         private static final String NUMBER = "number";
         public static final String PIC_ID = "picID";
-        private static final String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + " (" + UID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + NAME + " VARCHAR(255), " + FACTORY + " VARCHAR(255), " + PRICE + " VARCHAR(255), " + OFF + " VARCHAR(255), " + DESCRIPTION + " VARCHAR(255), " + NUMBER + " VARCHAR(255), " + PIC_ID + " VARCHAR(255))";
+        private static final String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + " (" + UID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + ProductType + " VARCHAR(255), " + NAME + " VARCHAR(255), " + FACTORY + " VARCHAR(255), " + PRICE + " VARCHAR(255), " + OFF + " VARCHAR(255), " + DESCRIPTION + " VARCHAR(255), " + NUMBER + " VARCHAR(255), " + PIC_ID + " VARCHAR(255))";
         private Context context;
 
         public myDbHelper(Context context) {

@@ -5,6 +5,7 @@ import com.example.msale.classes.Users.User;
 import com.example.msale.classes.mSale;
 
 public class Product {
+    private String type;
     private String name;
     private String factory;
     private long price;
@@ -15,19 +16,32 @@ public class Product {
     private int numberForBuy;
     private String picID;
 
-    public Product(String name, String factory, long price, double off, String description, int number) {
+    public Product(String type, String name, String factory, long price, double off, String explanation, int number) {
+        this.type = type;
         this.name = name;
         this.factory = factory;
         this.price = price;
         this.off = off;
-        this.explanation = description;
+        this.explanation = explanation;
         this.number = number;
-        if (this.off < 1) {
-            this.isHaveOff = true;
-        } else {
+        if (this.off >= 1){
             this.isHaveOff = false;
+        }else {
+            this.isHaveOff = true;
         }
         this.numberForBuy = 0;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setHaveOff(boolean haveOff) {
+        isHaveOff = haveOff;
     }
 
     public String getPicID() {

@@ -16,4 +16,15 @@
     <string name="menu_send">Send</string>
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_sign_in_page">SignInPage</string>
+
+    <string-array name="type_spinner_names">
+        <item>Adventure</item>
+        <item>Love affair</item>
+        <item>Science fiction</item>
+        <item>Tablet</item>
+        <item>Laptop</item>
+        <item>Cell phone</item>
+        <item>Limousine</item>
+        <item>Sedan</item>
+    </string-array>
 </resources>

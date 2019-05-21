@@ -60,13 +60,14 @@
                 android:textColor="#ff3a3a"
                 android:textSize="20sp"
                 android:textStyle="bold" />
-            <EditText
-                android:id="@+id/adding_product_product_kind"
+
+            <Spinner
+                android:id="@+id/adding_new_product_type_spinner"
+                android:layout_marginTop="13dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:hint="Product type"
-                android:textSize="15sp" />
+                android:entries="@array/type_spinner_names">
+            </Spinner>
 
             <EditText
                 android:id="@+id/adding_product_product_name"

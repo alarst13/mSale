@@ -17,6 +17,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 
 import com.example.msale.R;
 import com.example.msale.classes.Products.Product;
@@ -32,6 +33,7 @@ public class AddingNewProducts extends AppCompatActivity {
     private Button button;
     private EditText productNameEditText, productPriceEditText, productOffPriceEditText, descriptionEditText, numberEditText, factoryEditText;
     private String picID;
+    private Spinner spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +42,8 @@ public class AddingNewProducts extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adding_new_products);
 
-        imageView = findViewById(R.id.adding_image_view_products);
+
+        spinner = findViewById(R.id.adding_new_product_type_spinner);
         button = findViewById(R.id.adding_new_products_btn);
         productNameEditText = findViewById(R.id.adding_product_product_name);
         productPriceEditText = findViewById(R.id.adding_product_price);
@@ -48,11 +51,12 @@ public class AddingNewProducts extends AppCompatActivity {
         descriptionEditText = findViewById(R.id.adding_product_description);
         numberEditText = findViewById(R.id.adding_product_number);
         factoryEditText = findViewById(R.id.adding_product_factory);
+        imageView = findViewById(R.id.adding_image_view_products);
+        final ProductsDatabase productsDatabase = new ProductsDatabase(this);
 
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
                 photoPickerIntent.setType("image/*");
                 startActivityForResult(photoPickerIntent, RESULT_LOAD_IMG);
@@ -62,15 +66,15 @@ public class AddingNewProducts extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Product product = new Product(productNameEditText.getText().toString().trim(),
+                Product product = new Product(spinner.getSelectedItem().toString().trim(), productNameEditText.getText().toString().trim(),
                         factoryEditText.getTag().toString().trim(),
                         Long.valueOf(productPriceEditText.getTag().toString().trim()),
                         Double.valueOf(productOffPriceEditText.getTag().toString().trim()),
                         descriptionEditText.getTag().toString().trim(),
-                        Integer.valueOf(numberEditText.getTag().toString().trim()));
-
+                        Integer.valueOf(numberEditText.getTag().
+                                toString().trim()));
                 product.setPicID(picID);
+                productsDatabase.insertData(product.getType(), product.getName(), product.getFactory(), String.valueOf(product.getPrice()), String.valueOf(product.getOff()), product.getExplanation(), String.valueOf(product.getNumber()), product.getPicID());
             }
         });
 
@@ -89,7 +93,6 @@ public class AddingNewProducts extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (resultCode == RESULT_OK) {
-
             try {
                 final Uri imageUri = data.getData();
                 picID = imageUri.toString();
