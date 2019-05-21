@@ -11,7 +11,7 @@ public class LoveAffair extends Book {
     public static void mkShowList(){
         mSale.productsForShow.clear();
         for (Product p:mSale.products) {
-            if(p.getType().equals("Love affair")){
+            if(p.getType().equals("Love_affair")){
                 mSale.productsForShow.addLast(p);
             }
         }

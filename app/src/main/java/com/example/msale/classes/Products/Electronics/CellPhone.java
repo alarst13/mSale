@@ -12,7 +12,7 @@ public class CellPhone extends Electronic {
     public static void mkShowList(){
         mSale.productsForShow.clear();
         for (Product p:mSale.products) {
-            if(p.getType().equals("Cell phone")){
+            if(p.getType().equals("Cell_phone")){
                 mSale.productsForShow.addLast(p);
             }
         }

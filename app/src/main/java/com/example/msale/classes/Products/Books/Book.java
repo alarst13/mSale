@@ -12,7 +12,7 @@ public class Book extends Product {
     public static void mkShowList(){
         mSale.productsForShow.clear();
         for (Product p : mSale.products) {
-            if (p.getType().equals("Adventure") || p.getType().equals("Love affair") || p.getType().equals("Science fiction")){
+            if (p.getType().equals("Adventure") || p.getType().equals("Love_affair") || p.getType().equals("Science_fiction")){
                 mSale.productsForShow.addLast(p);
             }
         }

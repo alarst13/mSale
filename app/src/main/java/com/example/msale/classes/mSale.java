@@ -77,7 +77,9 @@ public class mSale {
             for (String s1 : productStrings) {
                 String[] fieldsStrings = s1.split(" ");
 
-                Product product = new Product(fieldsStrings[1], fieldsStrings[2], Long.valueOf(fieldsStrings[3]), Double.valueOf(fieldsStrings[4]), fieldsStrings[5], Integer.valueOf(fieldsStrings[6]));
+                Product product = new Product(fieldsStrings[2], fieldsStrings[3], Long.valueOf(fieldsStrings[4]), Double.valueOf(fieldsStrings[5]), fieldsStrings[6], Integer.valueOf(fieldsStrings[7]));
+                product.setType(fieldsStrings[1]);
+                product.setPicID(fieldsStrings[8]);
                 products.add(product);
             }
         }

@@ -19,11 +19,11 @@
 
     <string-array name="type_spinner_names">
         <item>Adventure</item>
-        <item>Love affair</item>
-        <item>Science fiction</item>
+        <item>Love_affair</item>
+        <item>Science_fiction</item>
         <item>Tablet</item>
         <item>Laptop</item>
-        <item>Cell phone</item>
+        <item>Cell_phone</item>
         <item>Limousine</item>
         <item>Sedan</item>
     </string-array>

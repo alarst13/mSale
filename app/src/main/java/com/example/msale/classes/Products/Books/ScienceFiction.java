@@ -12,7 +12,7 @@ public class ScienceFiction extends Book {
     public static void mkShowList(){
         mSale.productsForShow.clear();
         for (Product p:mSale.products) {
-            if(p.getType().equals("Science fiction")){
+            if(p.getType().equals("Science_fiction")){
                 mSale.productsForShow.addLast(p);
             }
         }
