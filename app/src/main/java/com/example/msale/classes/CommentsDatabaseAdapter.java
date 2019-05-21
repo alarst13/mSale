@@ -33,6 +33,7 @@ public class CommentsDatabaseAdapter {
         ContentValues contentValues = new ContentValues();
         contentValues.put(myDbHelper.USERNAME, username);
         contentValues.put(myDbHelper.COMMENTS, comments);
+
         long id = db.insert(myDbHelper.TABLE_NAME, null, contentValues);
         return id;
     }
